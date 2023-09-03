@@ -30,5 +30,14 @@ public abstract class Produto {
         this.codigo = codigo;
     }
 
+    public abstract float calcularPrecoTotal(int valor);
 
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "nome='" + nome + '\'' +
+                ", valor=" + valor +
+                ", codigo=" + codigo +
+                '}';
+    }
 }

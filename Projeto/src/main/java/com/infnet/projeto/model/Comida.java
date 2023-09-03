@@ -31,6 +31,11 @@ public class Comida extends Produto {
     }
 
     @Override
+    public float calcularPrecoTotal(int valor) {
+        return vegano ? (valor * peso) + 10 : valor * peso;
+    }
+
+    @Override
     public String toString() {
         return "Comida{" +
                 "peso=" + peso +

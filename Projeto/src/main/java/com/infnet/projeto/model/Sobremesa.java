@@ -31,6 +31,11 @@ public class Sobremesa extends Produto {
     }
 
     @Override
+    public float calcularPrecoTotal(int valor) {
+        return valor * quantidade;
+    }
+
+    @Override
     public String toString() {
         return "Sobremesa{" +
                 "quantidade=" + quantidade +

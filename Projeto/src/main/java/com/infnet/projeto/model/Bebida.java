@@ -31,6 +31,11 @@ public class Bebida extends Produto {
     }
 
     @Override
+    public float calcularPrecoTotal(int valor) {
+        return !gelada ? valor : (valor * tamanho * 1.10f);
+    }
+
+    @Override
     public String toString() {
         return "Bebida{" +
                 "gelada=" + gelada +
