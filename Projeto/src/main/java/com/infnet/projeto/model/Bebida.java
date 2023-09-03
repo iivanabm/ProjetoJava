@@ -31,8 +31,11 @@ public class Bebida extends Produto {
     }
 
     @Override
-    public float calcularPrecoTotal(int valor) {
-        return !gelada ? valor : (valor * tamanho * 1.10f);
+    public float calcularPrecoTotal(int quantidade) {
+        if (gelada) {
+            return this.getValor() * quantidade * 1.10f;
+        }
+        return quantidade * this.getValor();
     }
 
     @Override

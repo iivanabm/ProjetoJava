@@ -1,7 +1,15 @@
 package com.infnet.projeto.teste;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.infnet.projeto.exceptions.NomeException;
 import com.infnet.projeto.model.Comida;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,23 +48,31 @@ public class ComidaTeste {
         comidas.add(pizza);
         comidas.add(lasanha);
 
+        try {
+            // Ler dados do arquivo JSON
+            String jsonContent = new String(Files.readAllBytes(Paths.get("src/main/resources/comidas.json")));
+            ObjectMapper objectMapper = new ObjectMapper();
+            List<Comida> comidas2 = objectMapper.readValue(jsonContent, new TypeReference<List<Comida>>() {
+            });
 
-//       public static void main(String[] args) {
-//            try {
-//                String jsonContent = new String(Files.readAllBytes(Paths.get("src/main/resources/comidas.json")));
-//                ObjectMapper objectMapper = new ObjectMapper();
-//                List<Comida> comidas = objectMapper.readValue(jsonContent, new TypeReference<List<Comida>>() {});
-//
-//                String saidaArquivo = "src/main/resources/saida_comida.txt";
-//                for (Comida comida : comidas) {
-//                    System.out.println("Comida: " + comida.toString());
-//                    comida.imprimirComida(saidaArquivo); // Gravando em um arquivo específico
-//                }
-//            } catch (IOException e) {
-//                System.err.println("Erro ao ler o arquivo: " + e.getMessage());
-//            }
-//        }
+            // Arquivo de saída
+            String saidaArquivo = "src/main/resources/comida.txt";
 
+            // Abrir um BufferedWriter para escrever no arquivo de saída
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(saidaArquivo))) {
+                for (Comida comida : comidas) {
+                    if (comida.getNome() == null || comida.getNome().equals("")) {
+                        throw new NomeException("Nome da comida é obrigatório");
+                    }
+                    System.out.println("Comida: " + comida.toString());
+                    writer.write("Comida: " + comida.toString());
+                    writer.newLine(); // Adicionar uma nova linha após cada registro
+                }
+            } catch (IOException e) {
+                System.err.println("Erro ao escrever no arquivo de saída: " + e.getMessage());
+            }
+        } catch (IOException e) {
+            System.err.println("Erro ao ler o arquivo JSON: " + e.getMessage());
+        }
     }
-
 }

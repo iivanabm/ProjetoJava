@@ -30,7 +30,7 @@ public abstract class Produto {
         this.codigo = codigo;
     }
 
-    public abstract float calcularPrecoTotal(int valor);
+    public abstract float calcularPrecoTotal(int quantidade);
 
     @Override
     public String toString() {

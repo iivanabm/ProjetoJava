@@ -1,5 +1,7 @@
 package com.infnet.projeto.model;
 
+import java.util.Arrays;
+
 public class Comida extends Produto {
 
     private float peso;
@@ -40,7 +42,7 @@ public class Comida extends Produto {
         return "Comida{" +
                 "peso=" + peso +
                 ", vegano=" + vegano +
-                ", ingredientes='" + ingredientes + '\'' +
+                ", ingredientes='" + Arrays.toString(ingredientes) + '\'' +
                 '}';
     }
 }

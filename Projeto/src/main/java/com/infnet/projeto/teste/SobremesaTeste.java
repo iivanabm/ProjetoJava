@@ -1,5 +1,6 @@
 package com.infnet.projeto.teste;
 
+import com.infnet.projeto.exceptions.QuantidadeException;
 import com.infnet.projeto.model.Sobremesa;
 
 import java.util.ArrayList;
@@ -16,6 +17,10 @@ public class SobremesaTeste {
         pudim.setInformacao("Pudim de leite");
         pudim.setQuantidade(2);
 
+        if (pudim.getQuantidade() < 0) {
+            throw new QuantidadeException("A quantidade deve ser maior que zero");
+        }
+
         Sobremesa tortaHolandesa = new Sobremesa();
         tortaHolandesa.setNome("Pudim caseiro");
         tortaHolandesa.setCodigo(7);
@@ -25,6 +30,10 @@ public class SobremesaTeste {
         tortaHolandesa.setQuantidade(2);
         tortaHolandesa.setInformacao("Pudim de leite condensado");
 
+        if (tortaHolandesa.getQuantidade() < 0) {
+            throw new QuantidadeException("A quantidade deve ser maior que zero");
+        }
+
         Sobremesa brigadeiro = new Sobremesa();
         brigadeiro.setNome("Pudim caseiro");
         brigadeiro.setCodigo(8);
@@ -33,6 +42,10 @@ public class SobremesaTeste {
         brigadeiro.setInformacao("Pudim de leite");
         brigadeiro.setQuantidade(2);
         brigadeiro.setInformacao("Pudim de leite condensado");
+
+        if (brigadeiro.getQuantidade() < 0) {
+            throw new QuantidadeException("A quantidade deve ser maior que zero");
+        }
 
         List<Sobremesa> sobremesas = new ArrayList<>();
         sobremesas.add(brigadeiro);

@@ -1,5 +1,6 @@
 package com.infnet.projeto.teste;
 
+import com.infnet.projeto.exceptions.NomeException;
 import com.infnet.projeto.model.*;
 
 import java.time.LocalDateTime;
@@ -114,6 +115,9 @@ public class SolicitanteTeste {
         Solicitante ana = new Solicitante("Ana Ana", "45678945214", "ana@ana.com.br", Collections.singleton(pedido2));
         Solicitante joao = new Solicitante("Joao Joao", "12345698745", "joao@joao.com.br", Collections.singleton(pedido3));
 
+        if (maria.getNome() == null) {
+            throw new NomeException("O nome não pode ser null");
+        }
     }
 
 }

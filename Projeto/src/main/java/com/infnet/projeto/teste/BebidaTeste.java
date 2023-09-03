@@ -1,5 +1,6 @@
 package com.infnet.projeto.teste;
 
+import com.infnet.projeto.exceptions.QuantidadeException;
 import com.infnet.projeto.model.Bebida;
 
 import java.util.ArrayList;
@@ -36,6 +37,16 @@ public class BebidaTeste {
         bebidas.add(fanta);
         bebidas.add(sucoDeUva);
         bebidas.add(agua);
+
+        float precoTotal;
+
+        try {
+            precoTotal = agua.calcularPrecoTotal(2);
+        } catch (NumberFormatException e) {
+            throw new QuantidadeException("O valor deve ser um número");
+        }
+
+        System.out.println(precoTotal);
     }
 
 }

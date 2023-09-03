@@ -1,0 +1,3 @@
+Comida: Comida{peso=400.0, vegano=false, ingredientes='[macarrão, queijo, molho branco]'}
+Comida: Comida{peso=500.0, vegano=false, ingredientes='[frango, catupiry, queijo]'}
+Comida: Comida{peso=50.0, vegano=false, ingredientes='[carne, queijo, presunto]'}

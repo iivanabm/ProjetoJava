@@ -1,5 +1,6 @@
 package com.infnet.projeto.teste;
 
+import com.infnet.projeto.exceptions.ProdutoException;
 import com.infnet.projeto.model.*;
 
 import java.time.LocalDateTime;
@@ -29,6 +30,10 @@ public class PedidoTeste {
         List<Produto> produtos = new ArrayList<>();
         produtos.add(pizza);
         produtos.add(fanta);
+
+        if (produtos.isEmpty()) {
+            throw new ProdutoException("A lista de produtos não pode estar vazia");
+        }
 
         Pedido pedido1 = new Pedido();
         pedido1.setData(LocalDateTime.now());
@@ -65,6 +70,10 @@ public class PedidoTeste {
         produtos2.add(macarronada);
         produtos2.add(sucoDeUva);
         produtos2.add(pudim);
+
+        if (produtos2.isEmpty()) {
+            throw new ProdutoException("A lista de produtos não pode estar vazia");
+        }
 
         Pedido pedido2 = new Pedido();
         pedido2.setData(LocalDateTime.now());
@@ -103,11 +112,16 @@ public class PedidoTeste {
         produtos3.add(agua);
         produtos3.add(tortaHolandesa);
 
+        if (produtos3.isEmpty()) {
+            throw new ProdutoException("A lista de produtos não pode estar vazia");
+        }
+
         Pedido pedido3 = new Pedido();
         pedido3.setData(LocalDateTime.now());
         pedido3.setDescricao("lasanha, agua e torta holandesa");
         pedido3.setWeb(true);
         pedido3.setProdutos(produtos3);
+
 
 
     }

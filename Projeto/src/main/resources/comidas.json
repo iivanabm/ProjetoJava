@@ -1,0 +1,33 @@
+[
+  {
+    "nome": "Pizza",
+    "valor": 12.99,
+    "codigo": 3,
+    "peso": 10,
+    "vegano": false,
+    "ingredientes": ["frango", "tomate seco"]
+  },
+  {
+    "nome": "Sushi",
+    "codigo": 4,
+    "valor": 24.99,
+    "peso": 15,
+    "vegano": false,
+    "ingredientes": ["salmao", "arroz"]
+  },
+  {
+    "nome": "Hambúrguer",
+    "codigo": 5,
+    "valor": 9.99,
+    "peso": 13,
+    "vegano": false,
+    "ingredientes": ["queijo", "presunto"]
+  },
+  {
+    "nome": "Salada",
+    "valor": 7.49,
+    "peso": 15,
+    "vegano": true,
+    "ingredientes": ["alface", "tomate", "cenoura"]
+  }
+]
