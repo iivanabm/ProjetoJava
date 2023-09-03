@@ -2,6 +2,9 @@ package com.infnet.projeto.teste;
 
 import com.infnet.projeto.model.Sobremesa;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SobremesaTeste {
 
     public static void main(String[] args) {
@@ -30,6 +33,11 @@ public class SobremesaTeste {
         brigadeiro.setInformacao("Pudim de leite");
         brigadeiro.setQuantidade(2);
         brigadeiro.setInformacao("Pudim de leite condensado");
+
+        List<Sobremesa> sobremesas = new ArrayList<>();
+        sobremesas.add(brigadeiro);
+        sobremesas.add(tortaHolandesa);
+        sobremesas.add(pudim);
 
     }
 

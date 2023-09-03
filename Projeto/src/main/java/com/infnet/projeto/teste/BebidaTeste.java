@@ -2,6 +2,9 @@ package com.infnet.projeto.teste;
 
 import com.infnet.projeto.model.Bebida;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BebidaTeste {
 
     public static void main(String[] args) {
@@ -28,6 +31,11 @@ public class BebidaTeste {
         agua.setCodigo(3);
         agua.setNome("Agua");
         agua.setValor(3.50f);
+
+        List<Bebida> bebidas = new ArrayList<>();
+        bebidas.add(fanta);
+        bebidas.add(sucoDeUva);
+        bebidas.add(agua);
     }
 
 }

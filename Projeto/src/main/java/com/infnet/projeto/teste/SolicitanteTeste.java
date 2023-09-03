@@ -10,13 +10,14 @@ import java.util.List;
 public class SolicitanteTeste {
 
     public static void main(String[] args) {
+        String[] ingredientesPizza = {"frango", "catupiry", "queijo"};
         Comida pizza = new Comida();
         pizza.setCodigo(5);
         pizza.setNome("Pizza frango");
         pizza.setValor(59.90f);
         pizza.setPeso(500.00f);
         pizza.setVegano(false);
-        pizza.setIngredientes("frango, catupiry, queijo");
+        pizza.setIngredientes(ingredientesPizza);
 
         Bebida fanta = new Bebida();
         fanta.setGelada(true);
@@ -36,13 +37,14 @@ public class SolicitanteTeste {
         pedido1.setWeb(false);
         pedido1.setProdutos(produtos);
 
+        String[] ingredientesMacarronada = {"macarrão", "queijo", "molho branco"};
         Comida macarronada = new Comida();
         macarronada.setCodigo(4);
         macarronada.setNome("Macarronda da Casa");
         macarronada.setValor(39.90f);
         macarronada.setPeso(400.00f);
         macarronada.setVegano(false);
-        macarronada.setIngredientes("macarrão, queijo, molho branco");
+        macarronada.setIngredientes(ingredientesMacarronada);
 
         Bebida sucoDeUva = new Bebida();
         sucoDeUva.setGelada(true);
@@ -71,13 +73,14 @@ public class SolicitanteTeste {
         pedido2.setWeb(true);
         pedido2.setProdutos(produtos2);
 
+        String[] ingredientesLasanha = {"carne", "queijo", "presunto"};
         Comida lasanha = new Comida();
         lasanha.setCodigo(5);
         lasanha.setNome("Lasanha Carne");
         lasanha.setValor(19.90f);
         lasanha.setPeso(50.00f);
         lasanha.setVegano(false);
-        lasanha.setIngredientes("carne, queijo, presunto");
+        lasanha.setIngredientes(ingredientesLasanha);
 
         Bebida agua = new Bebida();
         agua.setGelada(false);
@@ -107,9 +110,9 @@ public class SolicitanteTeste {
         pedido3.setWeb(true);
         pedido3.setProdutos(produtos3);
 
-        Solicitante maria = new Solicitante("Maria Maria", "12345678910", "maria@maria.com.br", Collections.singletonList(pedido1));
-        Solicitante ana = new Solicitante("Ana Ana", "45678945214", "ana@ana.com.br", Collections.singletonList(pedido2));
-        Solicitante joao = new Solicitante("Joao Joao", "12345698745", "joao@joao.com.br", Collections.singletonList(pedido3));
+        Solicitante maria = new Solicitante("Maria Maria", "12345678910", "maria@maria.com.br", Collections.singleton(pedido1));
+        Solicitante ana = new Solicitante("Ana Ana", "45678945214", "ana@ana.com.br", Collections.singleton(pedido2));
+        Solicitante joao = new Solicitante("Joao Joao", "12345698745", "joao@joao.com.br", Collections.singleton(pedido3));
 
     }
 

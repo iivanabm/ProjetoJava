@@ -1,15 +1,15 @@
 package com.infnet.projeto.model;
 
-import java.util.List;
+import java.util.Set;
 
 public class Solicitante {
 
     private String nome;
     private String cpf;
     private String email;
-    private List<Pedido> pedidos;
+    private Set<Pedido> pedidos;
 
-    public Solicitante(String nome, String cpf, String email, List<Pedido> pedidos) {
+    public Solicitante(String nome, String cpf, String email, Set<Pedido> pedidos) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -40,11 +40,11 @@ public class Solicitante {
         this.email = email;
     }
 
-    public List<Pedido> getPedidos() {
+    public Set<Pedido> getPedidos() {
         return pedidos;
     }
 
-    public void setPedidos(List<Pedido> pedidos) {
+    public void setPedidos(Set<Pedido> pedidos) {
         this.pedidos = pedidos;
     }
 
